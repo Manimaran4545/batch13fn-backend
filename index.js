@@ -18,15 +18,11 @@ app.use("/user", userRoutes);
 
 mongoose
   .connect(process.env.MONGO_URL)
-  .then(() => console.log("Connected to database"))
-  .catch((err) => console.log("Error connecting to database", err));
-
-const PORT = process.env.PORT || 5000;
-
-if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  .then(() => {
+    console.log("MongoDB connected successfully");
+  })
+  .catch((error) => {
+    console.log("MongoDB connection error:", error.message);
   });
-}
 
 module.exports = app;
