@@ -28,8 +28,8 @@ mongoose.connect("mongodb://manimaran:manimara@ac-3bfedgn-shard-00-00.ottu39z.mo
     console.error("Error connecting to database", err);
 });
 // Server
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+// app.listen(port, () => {
+//     console.log(`Server running on port ${port}`);
+// });
 
-app.use("/User", user);
+app.use("/user", user);
